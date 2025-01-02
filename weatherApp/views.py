@@ -1,4 +1,16 @@
 from django.shortcuts import render
+import requests
 
 def index(request):
-    return render(request, 'weatherApp/weatherApp.html')
+    API_KEY = ''
+    city = 'Baltimore'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid={}'
+    data = requests.get(url.format(city, API_KEY)).json()
+    weather_data={
+        'city' : city,
+        'temperature' : data['main']['temp'],
+        'conditions' : data['weather'][0]['description']
+    }
+    print(weather_data)
+    final_data = {'weather_data' : weather_data}
+    return render(request, 'weatherApp/weatherApp.html', final_data)
