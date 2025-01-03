@@ -28,7 +28,7 @@ def index(request):
         weather_data = {
             'city': city,
             'temperature': 'N/A',
-            'conditions': 'Error connecting to weather service.'
+            'conditions': 'Could not connect to weather service'
         }
             
     print(weather_data)
