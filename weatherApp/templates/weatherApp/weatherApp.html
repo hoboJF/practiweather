@@ -78,10 +78,10 @@
             {{weather_data.city}}
         </div>
         <div class="temperature" id="temperature">
-            {{weather_data.temperature}}°F
+            {{weather_data.temperature|floatformat:1}}°F
         </div>
         <div class="conditions" id="conditions">
-            {{weather_data.conditions}}
+            {{weather_data.conditions|title}}
         </div>
     </div>
 
