@@ -67,10 +67,11 @@
 </head>
 <body>
 
-    <div class="search-container">
-        <input type="text" id="citySearch" class="search-bar" placeholder="Enter city..." />
-        <button class="search-button" id="searchButton">Enter</button>
-    </div>
+    <form method="post" class="search-container">
+        {% csrf_token %}
+        <input type="text" name="city" id="citySearch" class="search-bar" placeholder="Enter city..." />
+        <button class="search-button" type="submit" id="searchButton">Enter</button>
+    </form>
 
     <div class="weather-info">
         <div class="city-name" id="cityName">
