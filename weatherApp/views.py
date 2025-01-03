@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 
 def index(request):
-    API_KEY = '6d9088870fb8cc3dc6d1ba210bf87c58'
+    API_KEY = ''
     city = 'Baltimore'
     if request.method == 'POST':
         city = request.POST.get('city', 'Baltimore')
